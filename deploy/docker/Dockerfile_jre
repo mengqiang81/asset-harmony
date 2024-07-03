@@ -1,0 +1,10 @@
+FROM registry.cn-hangzhou.aliyuncs.com/yintai/gcr:java21-debian12-nonroot
+
+# 设置工作目录
+WORKDIR /app
+
+# 设置启动点
+ENTRYPOINT ["java","-jar","app.jar"]
+
+# 复制应用
+COPY target/pantheon-bootstrap.jar app.jar
